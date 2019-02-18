@@ -3,6 +3,7 @@ package com.example.chapter_11.messagequeue;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
+import android.util.Log;
 
 
 public class MyActivityLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
@@ -13,22 +14,26 @@ public class MyActivityLifecycleCallbacks implements Application.ActivityLifecyc
 
     @Override
     public void onActivityStarted(Activity activity) {
-
+        Log.d("Main2Activity", "onActivityStarted");
     }
+
 
     @Override
     public void onActivityResumed(Activity activity) {
 
+        Log.d("Main2Activity", "onActivityResumed");
     }
 
     @Override
     public void onActivityPaused(Activity activity) {
 
+        Log.d("Main2Activity", "onActivityPaused");
     }
 
     @Override
     public void onActivityStopped(Activity activity) {
 
+        Log.d("Main2Activity", "onActivityStopped");
     }
 
     @Override
