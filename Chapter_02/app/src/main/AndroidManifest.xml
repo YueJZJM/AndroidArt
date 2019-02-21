@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.chapter_02">
+
     <uses-permission android:name="com.example.PROVIDER" />
     <uses-permission android:name="com.example.chapter_2.permission.ACCESS_BOOK_SERVICE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <permission
         android:name="com.example.chapter_02.permission.ACCESS_BOOK_SERVICE"
         android:protectionLevel="normal" />
@@ -37,8 +39,15 @@
             android:name=".BookManagerService"
             android:process=":remote" />
 
-        <activity android:name=".BookManagerActivity"></activity>
+        <activity android:name=".BookManagerActivity" />
 
+        <provider
+            android:name=".provider.BookProvider"
+            android:authorities="com.example.chapter_02.provider.BookProvider"
+            android:permission="com.example.PROVIDER"
+            android:process=":provider" />
+
+        <activity android:name=".provider.ProviderActivity"></activity>
     </application>
 
 </manifest>

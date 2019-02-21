@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.example.chapter_02.messenger.MessengerActivity;
 import com.example.chapter_02.model.User;
+import com.example.chapter_02.provider.ProviderActivity;
 import com.example.chapter_02.utils.MyConstants;
 import com.example.chapter_02.utils.MyUtils;
 
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.persistToFile).setOnClickListener(this);
         findViewById(R.id.messenger).setOnClickListener(this);
         findViewById(R.id.book).setOnClickListener(this);
+        findViewById(R.id.provider).setOnClickListener(this);
 
         try {
             //检测是否有写的权限
@@ -97,6 +99,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.book:
                 Intent intent1 = new Intent(this, BookManagerActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.provider:
+                Intent intent2 = new Intent(this, ProviderActivity.class);
+                startActivity(intent2);
                 break;
             default:
                 break;

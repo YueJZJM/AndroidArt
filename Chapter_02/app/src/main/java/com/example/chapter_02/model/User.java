@@ -15,6 +15,10 @@ public class User implements Serializable {
         this.isMale = isMale;
     }
 
+    public User() {
+
+    }
+
     @Override
     public String toString() {
         return "User{" +
