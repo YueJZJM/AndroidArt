@@ -75,6 +75,7 @@ public class BookManagerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_book_manager);
         Intent intent = new Intent(this, BookManagerService.class);
         bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+        Log.d(TAG,"onCreate");
     }
 
     @Override

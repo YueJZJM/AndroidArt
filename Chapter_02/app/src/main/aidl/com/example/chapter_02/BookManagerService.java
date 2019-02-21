@@ -57,8 +57,11 @@ public class BookManagerService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
+        Log.d(TAG, "onBind: ");
         int check = checkCallingOrSelfPermission("com.example.chapter_02.permission.ACCESS_BOOK_SERVICE");
         if (check == PackageManager.PERMISSION_DENIED) {
+
+            Log.d(TAG,"NULL");
             return null;
         }
         return mBinder;
