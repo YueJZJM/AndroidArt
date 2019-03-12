@@ -101,10 +101,11 @@ public class TCPServerService extends Service {
             String msg = mDefinedMessages[i];
             out.println(msg);
             System.out.println("send :" + msg);
-            System.out.println("client quit.");
-            MyUtils.close(out);
-            MyUtils.close(in);
-            client.close();
+
         }
+        System.out.println("client quit.");
+        MyUtils.close(out);
+        MyUtils.close(in);
+        client.close();
     }
 }

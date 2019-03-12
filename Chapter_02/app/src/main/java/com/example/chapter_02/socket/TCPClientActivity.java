@@ -136,14 +136,20 @@ public class TCPClientActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         if (v == mSendButton) {
-            final String msg = mMessageEditText.getText().toString();
-            if (!TextUtils.isEmpty(msg) && mPrintWriter != null) {
-                mPrintWriter.println(msg);
-                mMessageEditText.setText("");
-                String time = formatDateTime(System.currentTimeMillis());
-                final String showedMsg = "self " + time + ":" + msg + "\n";
-                mMessageTextView.setText(mMessageTextView.getText() + showedMsg);
-            }
+          final String msg = mMessageEditText.getText().toString();
+          if (!TextUtils.isEmpty(msg) && mPrintWriter != null) {
+              new Thread(new Runnable() {
+                  @Override
+                  public void run() {
+                      mPrintWriter.println(msg);
+                  }
+              }).start();
+
+              mMessageEditText.setText("");
+              String time = formatDateTime(System.currentTimeMillis());
+              final String showedMsg = "self " + time + ":" + msg + "\n";
+              mMessageTextView.setText(mMessageTextView.getText() + showedMsg);
+          }
         }
     }
 }
