@@ -6,7 +6,6 @@
     <uses-permission android:name="com.example.chapter_02.permission.ACCESS_BOOK_SERVICE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -56,7 +55,13 @@
             android:name=".socket.TCPServerService"
             android:process=":remote" />
 
-        <activity android:name=".socket.TCPClientActivity"></activity>
+        <activity android:name=".socket.TCPClientActivity" />
+
+        <service
+            android:name=".binderpool.BinderPoolService"
+            android:process=":remote" />
+
+        <activity android:name=".binderpool.BinderPoolActivity"></activity>
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.chapter_02.binderpool.BinderPoolActivity;
 import com.example.chapter_02.messenger.MessengerActivity;
 import com.example.chapter_02.model.User;
 import com.example.chapter_02.provider.ProviderActivity;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.book).setOnClickListener(this);
         findViewById(R.id.provider).setOnClickListener(this);
         findViewById(R.id.tcp).setOnClickListener(this);
+        findViewById(R.id.binder).setOnClickListener(this);
 
         try {
             //检测是否有写的权限
@@ -110,6 +112,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent3 = new Intent(this, TCPClientActivity.class);
                 startActivity(intent3);
                 break;
+            case R.id.binder:
+                Intent intent4 = new Intent(this, BinderPoolActivity.class);
+                startActivity(intent4);
             default:
                 break;
         }
