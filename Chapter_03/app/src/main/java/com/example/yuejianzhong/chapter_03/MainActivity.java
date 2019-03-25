@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.demo_1).setOnClickListener(this);
+        findViewById(R.id.demo_2).setOnClickListener(this);
     }
 
     @Override
@@ -20,6 +21,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.demo_1:
                 intent = new Intent(this, DemoActivity_1.class);
+                break;
+            case R.id.demo_2:
+                intent = new Intent(this, DemoActivity_2.class);
                 break;
             default:
                 break;
