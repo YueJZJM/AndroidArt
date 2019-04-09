@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.CircleView).setOnClickListener(this);
+        findViewById(R.id.HorizontalScrollViewEx).setOnClickListener(this);
     }
 
     @Override
@@ -20,6 +21,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.CircleView:
                 intent = new Intent(this, CircleViewActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.HorizontalScrollViewEx:
+                intent = new Intent(this, HorizontalScrollViewExActivity.class);
                 startActivity(intent);
                 break;
             default:
